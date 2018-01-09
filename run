@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# Lints the files, builds them and then runs them if compilation is successful
+
+# --- LINTING ---
+
+echo "Linting..."
+echo
+
+echo "main.cpp"
+./cpplint.py main.cpp
+
+echo
+
+echo "sophie-germain/sophie-germain.h"
+./cpplint.py sophie-germain/sophie-germain.h
+
+echo
+
+echo "sophie-germain/sophie-germain.cpp"
+./cpplint.py sophie-germain/sophie-germain.cpp
+
+echo
+
+echo "prime/prime.h"
+./cpplint.py prime/prime.h
+
+echo
+
+echo "prime/prime.cpp"
+./cpplint.py prime/prime.cpp
+
+# --- BUILDING ---
+
+echo
+echo "Building..."
+echo
+
+make
+
+# Stores the success of the make command
+SUCCESS=$?
+
+echo
+
+# If running the make command was successful (compiled without errors)
+if [ $SUCCESS -eq 0 ]
+then
+	echo "Running...Output: $?"
+	echo
+	./a.out
+else
+	echo "Compilation failed..."
+fi
