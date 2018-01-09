@@ -4,7 +4,7 @@
 ### Sophie Germain Primes
 A sophie germain prime is a prime number `n` where `2n+1` is also a prime number
 
-Think you've found one? Enter `./run' in a terminal in the root directory to build the project
+Think you've found one? Enter `./run` in a terminal in the root directory to build the project
 or `./a.out` to run the precompiled source
 
 ### Directory Structure
