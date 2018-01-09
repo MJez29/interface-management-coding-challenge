@@ -1,11 +1,11 @@
 #include <iostream>
-#include "primes/primes.h"
+#include "sophie-germain/sophie-germain.h"
 
 using namespace std;
 
 int main()
 {
-	cout << "--- SHOPHIE GERMAIN PRIME VERIFIER --"
+	cout << "--- SHOPHIE GERMAIN PRIME VERIFIER ---" << endl;
 	while (true)
 	{
 		cout << "Enter a number (0 to exit): ";
@@ -14,7 +14,7 @@ int main()
 		if (n == 0)
 			break;
 		
-		cout << is_sophie_germain_prime
+		cout << n << " is " << (is_sophie_germain_prime(n) ? "" : "not ") << "a sophie germain prime" << endl;
 	}
 
 	return 0;

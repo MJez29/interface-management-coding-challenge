@@ -1,5 +1,6 @@
 #include "prime.h"
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
@@ -21,16 +22,16 @@ bool is_prime(int n)
 		return false;
 	
 	// If the requested number's primeness has already been determined
-	if (is_prime_lookup.size() < n - 1)
+	if (n - 1 <= is_prime_lookup.size())
 		return is_prime_lookup[n - 2];
 		
-	is_prime_lookup.resize(n - 2, false);
+	is_prime_lookup.resize(n - 1, true);
 	
 	for (int i = 0; i <= n / 2; i++)
 	{
 		if (is_prime_lookup[i])
 		{
-			for (int j = i; j < n - 1; j += i + 2) {
+			for (int j = 2 * i + 2; j < n - 1; j += i + 2) {
 				is_prime_lookup[j] = false;
 			}
 		}
