@@ -25,8 +25,10 @@ bool is_prime(int n)
 	if (n - 1 <= is_prime_lookup.size())
 		return is_prime_lookup[n - 2];
 		
+	// Resizes the lookup vector so that it can hold all numbers greater than 1 up to and including n
 	is_prime_lookup.resize(n - 1, true);
 	
+	// Sieve of eratosthenes
 	for (int i = 0; i <= n / 2; i++)
 	{
 		if (is_prime_lookup[i])
@@ -37,6 +39,7 @@ bool is_prime(int n)
 		}
 				
 	}
+	
 	return is_prime_lookup[n - 2];
 }
 
